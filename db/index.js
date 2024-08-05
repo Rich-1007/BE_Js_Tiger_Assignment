@@ -6,7 +6,7 @@ const connectDB = async () => {
     return client;
   }
   try {
-    client = await MongoClient.connect("mongodb+srv://root:root@cluster0.o5xqgfb.mongodb.net");
+    client = await MongoClient.connect(process.env.MONGO_URI);
     console.log("DB connected");
     return client;
   } catch (error) {
